@@ -131,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:padding="18dp"
                     android:textSize="18sp"
+                    android:textAlignment="center"
                     android:lineSpacingExtra="6dp"
                     android:justificationMode="inter_word"
                     android:text="Rodolfo el cerrajero vende herrajes y cerrojos en su cerrajería, coloca herrajes y abre cerrojos de rejas."/>

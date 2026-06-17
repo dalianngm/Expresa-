@@ -76,28 +76,6 @@ public class Reward2 extends AppCompatActivity implements View.OnClickListener {
         ivRew2Rp2.setOnClickListener(this);
     }
 
-    private void reproducirAudios(int... audios) {
-        if (mp != null) {
-            try { mp.release(); } catch (Exception e) { e.printStackTrace(); }
-            mp = null;
-        }
-        if (audios.length == 0) return;
-        reproducirSecuencia(audios, 0);
-    }
-
-    private void reproducirSecuencia(int[] audios, int index) {
-        mp = MediaPlayer.create(this, audios[index]);
-        if (mp == null) return;
-        mp.start();
-        mp.setOnCompletionListener(mediaPlayer -> {
-            mediaPlayer.release();
-            int siguiente = index + 1;
-            if (siguiente < audios.length) {
-                reproducirSecuencia(audios, siguiente);
-            }
-        });
-    }
-
     private void trajeBallet(){
 
         switch (unicornioSeleccionado){
@@ -146,7 +124,7 @@ public class Reward2 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.ivRegresarRew1) {
+        if (v.getId() == R.id.ivRegresarRew2) {
             finish();
         }
         else if (v.getId() == R.id.ivRew2Esc1) {

@@ -41,7 +41,7 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
     private FirebaseFirestore db;
 
     // Estados de las imágenes correctas (las que contienen el fonema 'r')
-    private boolean img2 = false, img4 = false, img5 = false, img6 = false, img7 = false, img9 = false, img10 = false, img11 = false;
+    private boolean img2 = false, img5 = false, img6 = false, img9 = false, img11 = false;
 
     @Override
     protected void onDestroy() {
@@ -144,12 +144,9 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
                             Map<String, Boolean> estados = (Map<String, Boolean>) data.get("estados");
                             if (estados != null) {
                                 img2 = estados.getOrDefault("img2", false);
-                                img4 = estados.getOrDefault("img4", false);
                                 img5 = estados.getOrDefault("img5", false);
                                 img6 = estados.getOrDefault("img6", false);
-                                img7 = estados.getOrDefault("img7", false);
                                 img9 = estados.getOrDefault("img9", false);
-                                img10 = estados.getOrDefault("img10", false);
                                 img11 = estados.getOrDefault("img11", false);
                                 actualizarInterfazDesdeProgreso();
                             }
@@ -161,12 +158,9 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
 
     private void actualizarInterfazDesdeProgreso() {
         if (img2) eje01_img2.setImageResource(R.drawable.r_r_perro);
-        if (img4) eje01_img4.setImageResource(R.drawable.r_r_cerdo);
         if (img5) eje01_img5.setImageResource(R.drawable.r_r_cerrucho);
         if (img6) eje01_img6.setImageResource(R.drawable.r_r_carro);
-        if (img7) eje01_img7.setImageResource(R.drawable.r_r_numero);
         if (img9) eje01_img9.setImageResource(R.drawable.r_r_rana);
-        if (img10) eje01_img10.setImageResource(R.drawable.r_r_letra);
         if (img11) eje01_img11.setImageResource(R.drawable.r_r_raton);
     }
 
@@ -176,12 +170,9 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
         int totalItems = 8;
         int completados = 0;
         if (img2) completados++;
-        if (img4) completados++;
         if (img5) completados++;
         if (img6) completados++;
-        if (img7) completados++;
         if (img9) completados++;
-        if (img10) completados++;
         if (img11) completados++;
 
         int porcentaje = (completados * 100) / totalItems;
@@ -193,12 +184,9 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
         
         Map<String, Boolean> estados = new HashMap<>();
         estados.put("img2", img2);
-        estados.put("img4", img4);
         estados.put("img5", img5);
         estados.put("img6", img6);
-        estados.put("img7", img7);
         estados.put("img9", img9);
-        estados.put("img10", img10);
         estados.put("img11", img11);
         progreso.put("estados", estados);
         progreso.put("completado", porcentaje == 100);
@@ -273,7 +261,7 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
                 reproducirAudios(R.raw.no_has_terminado);
             }
         } else if (id == R.id.eje01_img0) {
-            reproducirAudios(R.raw.r);
+            reproducirAudios(R.raw.sonido_r_fuerte);
         } else if (id == R.id.eje01_img1) {
             reproducirAudios(R.raw.cactus, R.raw.intentalo_otra_vez);
         } else if (id == R.id.eje01_img2) {
@@ -284,10 +272,7 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
         } else if (id == R.id.eje01_img3) {
             reproducirAudios(R.raw.n_luna, R.raw.intentalo_otra_vez);
         } else if (id == R.id.eje01_img4) {
-            eje01_img4.setImageResource(R.drawable.r_r_cerdo);
-            img4 = true;
-            procesarAcierto(R.raw.cerdito);
-            guardarProgreso();
+            reproducirAudios(R.raw.cerdito, R.raw.intentalo_otra_vez);
         } else if (id == R.id.eje01_img5) {
             eje01_img5.setImageResource(R.drawable.r_r_cerrucho);
             img5 = true;
@@ -299,10 +284,7 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
             procesarAcierto(R.raw.r_carrito);
             guardarProgreso();
         } else if (id == R.id.eje01_img7) {
-            eje01_img7.setImageResource(R.drawable.r_r_numero);
-            img7 = true;
-            procesarAcierto(R.raw.cuatro);
-            guardarProgreso();
+            reproducirAudios(R.raw.cuatro, R.raw.intentalo_otra_vez);
         } else if (id == R.id.eje01_img8) {
             reproducirAudios(R.raw.peine, R.raw.intentalo_otra_vez);
         } else if (id == R.id.eje01_img9) {
@@ -311,10 +293,7 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
             procesarAcierto(R.raw.r_rana);
             guardarProgreso();
         } else if (id == R.id.eje01_img10) {
-            eje01_img10.setImageResource(R.drawable.r_r_letra);
-            img10 = true;
-            procesarAcierto(R.raw.letra_a);
-            guardarProgreso();
+            reproducirAudios(R.raw.letra_a, R.raw.intentalo_otra_vez);
         } else if (id == R.id.eje01_img11) {
             eje01_img11.setImageResource(R.drawable.r_r_raton);
             img11 = true;
@@ -332,7 +311,6 @@ public class Ejercicio01 extends AppCompatActivity implements View.OnClickListen
     }
 
     private boolean verificarCompletado() {
-        return img2 && img4 && img5 && img6 &&
-                img7 && img9 && img10 && img11;
+        return img2 && img5 && img6 && img9 && img11;
     }
 }

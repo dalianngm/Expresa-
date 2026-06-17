@@ -131,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:padding="18dp"
                     android:textSize="18sp"
+                    android:textAlignment="center"
                     android:lineSpacingExtra="6dp"
                     android:justificationMode="inter_word"
                     android:text="El tapón está enroscado\nel tapón está enroscado,\n !quien lo desenroscará!\nEl desenroscador que lo desenrosque, \nbuen desenroscador será."/>

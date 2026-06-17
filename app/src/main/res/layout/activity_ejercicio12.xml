@@ -102,7 +102,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1. Observa todas las imágenes. \n2. Presiona cada imagen para escuchar su nombre. \n3. Encuentra las imágenes que tengan la letra R. \n4. Une esas imágenes con la imagen de la letra R. \n5. Si eliges correctamente, la línea se quedará. \n6. Si no es correcta, la línea desaparecerá."
+                        android:text="1. Observa todas las imágenes. \n2. Presiona cada imagen para escuchar su nombre. \n3. Encuentra las imágenes que su nombre comience con la letra R. \n4. Une esas imágenes con la imagen de la letra R. \n5. Si eliges correctamente, la línea se quedará. \n6. Si no es correcta, la línea desaparecerá."
                         android:textSize="18sp"
                         android:textColor="@color/white"
                         android:lineSpacingExtra="4dp"

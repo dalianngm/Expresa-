@@ -84,6 +84,9 @@ public class Ejercicio2Activity extends AppCompatActivity {
         });
 
         ImageView zonaR = findViewById(R.id.zonaR);
+        zonaR.setOnClickListener(v -> {
+            reproducirAudio(R.raw.sonido_r_fuerte);
+        });
         zonaR.setOnDragListener((v, event) -> {
             if (event.getAction() == DragEvent.ACTION_DROP) {
                 View view = (View) event.getLocalState();
@@ -149,7 +152,6 @@ public class Ejercicio2Activity extends AppCompatActivity {
         List<ItemImagen> listaImagenes = new ArrayList<>();
         // CORRECTAS
         listaImagenes.add(new ItemImagen(R.drawable.r_carrito, R.raw.r_carrito, true));
-        listaImagenes.add(new ItemImagen(R.drawable.r_frasco, R.raw.r_frasco, true));
         listaImagenes.add(new ItemImagen(R.drawable.r_gorra, R.raw.r_gorra, true));
         listaImagenes.add(new ItemImagen(R.drawable.r_perro, R.raw.r_perro, true));
         listaImagenes.add(new ItemImagen(R.drawable.r_pizarron, R.raw.r_pizarron, true));
@@ -163,13 +165,14 @@ public class Ejercicio2Activity extends AppCompatActivity {
         listaImagenes.add(new ItemImagen(R.drawable.r_regla, R.raw.r_regla, true));
         listaImagenes.add(new ItemImagen(R.drawable.r_reloj, R.raw.r_reloj, true));
         listaImagenes.add(new ItemImagen(R.drawable.r_rosa, R.raw.r_rosa, true));
-        listaImagenes.add(new ItemImagen(R.drawable.r_tornado, R.raw.r_tornado, true));
 
         // INCORRECTAS
         listaImagenes.add(new ItemImagen(R.drawable.n_casa, R.raw.n_casa, false));
+        listaImagenes.add(new ItemImagen(R.drawable.r_frasco, R.raw.r_frasco, false));
         listaImagenes.add(new ItemImagen(R.drawable.n_gato, R.raw.n_gato, false));
         listaImagenes.add(new ItemImagen(R.drawable.n_luna, R.raw.n_luna, false));
         listaImagenes.add(new ItemImagen(R.drawable.n_mesa, R.raw.n_mesa, false));
+        listaImagenes.add(new ItemImagen(R.drawable.r_tornado, R.raw.r_tornado, false));
 
         Collections.shuffle(listaImagenes);
 

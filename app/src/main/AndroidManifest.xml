@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,14 +16,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TT2">
+        android:theme="@style/Theme.TT2" >
         <activity
-            android:name=".rewards.Reward2"
+            android:name=".rewards.Reward4"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".rewards.Reward1"
+            android:name=".rewards.Reward3"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +32,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".rewards.Reward2"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".rewards.Reward1"
+            android:exported="false" />
+        <activity
             android:name=".ejercicios.Ejercicio14"
             android:exported="false" />
         <activity
@@ -39,10 +46,12 @@
             android:exported="false" />
         <activity
             android:name=".ejercicios.Ejercicio15Activity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".ejercicios.Ejercicio12"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".ejercicios.Ejercicio11Activity"
             android:exported="false" />
@@ -90,13 +99,16 @@
             android:exported="false" />
         <activity
             android:name=".ejercicios.Ejercicio3Activity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".ejercicios.Ejercicio2Activity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".ejercicios.Ejercicio01"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -105,7 +117,9 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+
+        </activity>
     </application>
 
 </manifest>

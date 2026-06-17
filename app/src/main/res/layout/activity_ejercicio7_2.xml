@@ -131,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:padding="18dp"
                     android:textSize="18sp"
+                    android:textAlignment="center"
                     android:lineSpacingExtra="6dp"
                     android:justificationMode="inter_word"
                     android:text="La araña con maña\namaña la laña.\nLa araña con maña\nteje la telaraña.\nLa araña con maña\nes una tacaña."/>
